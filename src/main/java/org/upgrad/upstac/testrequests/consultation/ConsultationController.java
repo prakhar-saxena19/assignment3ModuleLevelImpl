@@ -55,7 +55,7 @@ public class ConsultationController {
         // For reference check the method getForTests() method from LabRequestController class
 
         // replace this line of code with your implementation
-//        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
+        // throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
 
         return testRequestQueryService.findBy(RequestStatus.LAB_TEST_COMPLETED);
 
@@ -73,8 +73,8 @@ public class ConsultationController {
         // For reference check the method getForTests() method from LabRequestController class
 
         // replace this line of code with your implementation
-//        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
-
+        // throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
+        
         User loggedInDoctor = userLoggedInService.getLoggedInUser();
         return testRequestQueryService.findByDoctor(loggedInDoctor);
     }
@@ -94,12 +94,9 @@ public class ConsultationController {
         // For reference check the method assignForLabTest() method from LabRequestController class
         try {
             // replace this line of code with your implementation
-
             User loggedInDoctor = userLoggedInService.getLoggedInUser();
             return testRequestUpdateService.assignForConsultation(id, loggedInDoctor);
-
-//            throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
-
+//          throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
         }catch (AppException e) {
             throw asBadRequest(e.getMessage());
         }
@@ -121,20 +118,13 @@ public class ConsultationController {
 
         try {
             // replace this line of code with your implementation
-
             User loggedInDoctor = userLoggedInService.getLoggedInUser();
-
             return testRequestUpdateService.updateConsultation(id, testResult, loggedInDoctor);
-
-
-
         } catch (ConstraintViolationException e) {
             throw asConstraintViolation(e);
         }catch (AppException e) {
             throw asBadRequest(e.getMessage());
         }
     }
-
-
 
 }
